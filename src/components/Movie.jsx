@@ -24,14 +24,18 @@ const Movie = ({ movie, openPostReviewForm }) => {
       return;
     }
 
-    const data = await fetch("https://movies-backend-heroku.herokuapp.com/razorpay", {
-      method: "POST",
-    }).then((t) => t.json());
+    const data = await fetch(
+      "https://movies-backend-heroku.herokuapp.com/razorpay",
+      {
+        method: "POST",
+      }
+    ).then((t) => t.json());
 
     console.log(data, "data");
-    const __DEV__ = document.domain === "localhost";
+    // const __DEV__ = document.domain === "localhost";
     const options = {
-      key: __DEV__ ? "rzp_test_crVX0LmGZAdl59" : "PRODUCTION_KEY",
+      // key: __DEV__ ? "rzp_test_crVX0LmGZAdl59" : "rzp_test_crVX0LmGZAdl59",
+      key: "rzp_test_crVX0LmGZAdl59",
       currency: data.currency,
       amount: data.amount.toString(),
       order_id: data.id,
@@ -81,13 +85,13 @@ const Movie = ({ movie, openPostReviewForm }) => {
           </button>
         </Link>
         {/* <Link to="/post-review"> */}
-          <button
-            className="postReviewBtn"
-            type="button"
-            onClick={displayRazorpay}
-          >
-            Buy/Rent
-          </button>
+        <button
+          className="postReviewBtn"
+          type="button"
+          onClick={displayRazorpay}
+        >
+          Buy/Rent
+        </button>
         {/* </Link> */}
       </div>
     </div>
