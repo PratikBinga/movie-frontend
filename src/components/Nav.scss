@@ -1,0 +1,32 @@
+/* .navWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  min-height: 50px;
+  margin-top: 1rem;
+  padding: 0.2rem;
+  z-index: 100;
+} */
+
+.nav {
+  /* background: black; */
+  color: white;
+  top: 0;
+  width: 100%;
+  right: 0;
+  left: 0;
+  padding: 0.2rem;
+  text-decoration: none;
+}
+
+nav h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navLink {
+  text-decoration: "none";
+  color: white;
+}

@@ -1,0 +1,60 @@
+.movieBox {
+  cursor: pointer;
+  margin: 0.4rem;
+  min-width: 250px;
+  max-width: 300px;
+  background: #373b69;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.movieBox img {
+  width: 100%;
+}
+
+.movieDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.movieTitle,
+.movieVote {
+  font-size: 1.2rem;
+}
+
+.movieOverview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  color: #22254b;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: 0.5s ease-in-out;
+  overflow-y: scroll;
+  min-height: 200px;
+  max-height: 400px;
+  cursor: pointer;
+}
+
+.movieBox:hover .movieOverview {
+  transform: translateY(0%);
+}
+
+.postReviewBtn {
+  cursor: pointer;
+  border: 1px solid black;
+  color: white;
+  background-color: #2f0064;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  // margin-top: 0.4rem;
+  margin: 0.2rem;
+}

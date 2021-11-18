@@ -1,0 +1,66 @@
+.postFormContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  /* margin-top: 6rem; */
+  margin-left: 2rem;
+}
+
+.inputBoxPostReviewContainer {
+  display: flex;
+  justify-content: centre;
+  flex-wrap: wrap;
+}
+
+.labelPostReview {
+  font-size: 1.2rem;
+  flex-basis: 15%;
+}
+
+.inputTextPostReview {
+  flex-basis: 85%;
+}
+.inputTextPostReview input {
+  min-width: 300px;
+  min-height: 30px;
+  font-size: 1.2rem;
+  font-family: "Poppins";
+}
+.inputTextPostReview select {
+  min-width: 300px;
+  min-height: 30px;
+  font-size: 1.2rem;
+  font-family: "Poppins";
+}
+.inputTextPostReview textarea {
+    min-width: 300px;
+    min-height: 30px;
+    font-size: 1.2rem;
+    font-family: "Poppins";
+  }
+ .inputTextPostReviewCheckBox input{
+    transform: translate(-140px, 0px);
+    min-width: 300px;
+    min-height: 30px;
+    font-size: 1.2rem;
+    font-family: "Poppins";
+ }
+.validationError {
+  margin-left: 1rem;
+  color: red;
+  font-family: "Poppins",;
+}
+.postReviewSubmitBtn {
+  cursor: pointer;
+  border: 1px solid black;
+  color: black;
+  background-color: #22254b;
+  background-color: white;
+  font-size: 1.2rem;
+  padding: 0.6rem;
+  min-width: 80px;
+  max-width: 100px;
+  font-family: "Poppins";
+}

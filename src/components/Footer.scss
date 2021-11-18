@@ -1,0 +1,17 @@
+.footer {
+  background: black;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+  /* position: fixed; */
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  padding: 0.2rem;
+  overflow: hidden;
+  z-index: 100;
+}

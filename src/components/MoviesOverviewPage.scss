@@ -1,0 +1,14 @@
+/* .menuBarContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  } */
+  .menuBarContainerPostReview {
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+  }
+  
