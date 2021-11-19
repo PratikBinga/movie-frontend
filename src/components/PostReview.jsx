@@ -2,48 +2,75 @@ import { Form, Formik } from "formik";
 import React from "react";
 import * as yup from "yup";
 import "./PostReview.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router";
 
 const PostReview = () => {
+  const navigate = useNavigate();
+
   const newItemSchema = yup.object({
-    title: yup.string().required(),
+    creator: yup.string().required(),
     rating: yup.number().required().min(1).max(10),
     // adult: yup.string().required(),
     genre: yup.string().required(),
-    language: yup.string().required(),
+    title: yup.string().required(),
     comments: yup.string().required(),
   });
 
   return (
     <Formik
       initialValues={{
-        title: "",
+        creator: "",
         rating: "",
         adult: "",
         genre: "",
-        language: "",
+        title: "",
         comments: "",
       }}
       validationSchema={newItemSchema}
       onSubmit={(values, { resetForm }) => {
         console.log(values, "formValues----");
+        // submitReviewPost(values);
+        fetch("https://movies-backend-heroku.herokuapp.com/posts", {
+          method: "POST", // or 'PUT'
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(values),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+            toast.success("Successfully Posted");
+            resetForm();
+            setTimeout(() => {
+              navigate("/");
+            }, 1500);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            toast("Successfully Posted");
+          });
 
-        alert(JSON.stringify(values));
-        resetForm();
+        // alert(JSON.stringify(values));
       }}
     >
       {(fp) => (
         <Form className="postFormContainer">
           <div className="inputBoxPostReviewContainer">
-            <div className="labelPostReview">Name</div>
+            <ToastContainer />
+            <div className="labelPostReview">Creator</div>
             <div className="inputTextPostReview">
               <input
                 type="Title"
-                value={fp.values.title}
-                onChange={fp.handleChange("title")}
-                onBlur={fp.handleBlur("title")}
+                value={fp.values.creator}
+                onChange={fp.handleChange("creator")}
+                onBlur={fp.handleBlur("creator")}
               />
               <span className="validationError">
-                {fp.touched.title && fp.errors?.title}
+                {fp.touched.creator && fp.errors?.creator}
               </span>
             </div>
           </div>
@@ -99,16 +126,16 @@ const PostReview = () => {
             </div>
           </div>
           <div className="inputBoxPostReviewContainer">
-            <div className="labelPostReview">Language</div>
+            <div className="labelPostReview">Movie Name</div>
             <div className="inputTextPostReview">
               <input
                 type="text"
-                value={fp.values.language}
-                onChange={fp.handleChange("language")}
-                onBlur={fp.handleBlur("language")}
+                value={fp.values.title}
+                onChange={fp.handleChange("title")}
+                onBlur={fp.handleBlur("title")}
               />
               <span className="validationError">
-                {fp.touched.language && fp.errors?.language}
+                {fp.touched.title && fp.errors?.title}
               </span>
             </div>
           </div>
