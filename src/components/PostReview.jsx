@@ -32,7 +32,7 @@ const PostReview = () => {
       onSubmit={(values, { resetForm }) => {
         console.log(values, "formValues----");
         // submitReviewPost(values);
-        fetch("https://movies-backend-heroku.herokuapp.com/posts", {
+        fetch("https://movies-backend2-heroku.herokuapp.com/posts", {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
