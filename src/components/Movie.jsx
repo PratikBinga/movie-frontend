@@ -24,12 +24,9 @@ const Movie = ({ movie, openPostReviewForm }) => {
       return;
     }
 
-    const data = await fetch(
-      "https://movies-backend-heroku.herokuapp.com/razorpay",
-      {
-        method: "POST",
-      }
-    ).then((t) => t.json());
+    const data = await fetch(`https://movies-backend2-heroku.herokuapp.com/razorpay`, {
+      method: "POST",
+    }).then((t) => t.json());
 
     console.log(data, "data");
     // const __DEV__ = document.domain === "localhost";
@@ -41,7 +38,7 @@ const Movie = ({ movie, openPostReviewForm }) => {
       order_id: data.id,
       name: "Flick-O-Meter",
       description: "Buy or Rent movie, Enjoy!",
-      image: "https://movies-backend-heroku.herokuapp.com/logo.svg",
+      image: `https://movies-backend2-heroku.herokuapp.com/logo.svg`,
       handler: function (response) {
         alert(response.razorpay_payment_id);
         alert(response.razorpay_order_id);

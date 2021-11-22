@@ -32,22 +32,23 @@ const PostReview = () => {
       onSubmit={(values, { resetForm }) => {
         console.log(values, "formValues----");
         // submitReviewPost(values);
-        fetch("https://movies-backend2-heroku.herokuapp.com/posts", {
+        fetch(`https://movies-backend2-heroku.herokuapp.com/posts`, {
           method: "POST", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
           },
           body: JSON.stringify(values),
         })
           .then((response) => response.json())
           .then((data) => {
             console.log("Success:", data);
-            toast.success("Successfully Posted");
-            resetForm();
-            setTimeout(() => {
-              navigate("/");
-            }, 1500);
+            if (data._id !== undefined) {
+              toast.success("Successfully Posted");
+              resetForm();
+              setTimeout(() => {
+                navigate("/");
+              }, 1500);
+            }
           })
           .catch((error) => {
             console.error("Error:", error);
