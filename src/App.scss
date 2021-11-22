@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-right: 0.4rem;
-  margin-left: 0.4rem;
+  z-index: 1000;
+  background: black;
+  width: 100%;
+  position: fixed;
 }
