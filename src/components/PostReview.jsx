@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import * as yup from "yup";
 import "./PostReview.scss";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,6 +8,10 @@ import { useNavigate } from "react-router";
 
 const PostReview = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const newItemSchema = yup.object({
     creator: yup.string().required(),

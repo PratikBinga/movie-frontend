@@ -6,6 +6,7 @@
   flex-direction: column;
   /* margin-top: 6rem; */
   margin-left: 2rem;
+  padding-top: 2.4rem;
 }
 
 .inputBoxPostReviewContainer {
@@ -35,22 +36,22 @@
   font-family: "Poppins";
 }
 .inputTextPostReview textarea {
-    min-width: 300px;
-    min-height: 30px;
-    font-size: 1.2rem;
-    font-family: "Poppins";
-  }
- .inputTextPostReviewCheckBox input{
-    transform: translate(-140px, 0px);
-    min-width: 300px;
-    min-height: 30px;
-    font-size: 1.2rem;
-    font-family: "Poppins";
- }
+  min-width: 300px;
+  min-height: 30px;
+  font-size: 1.2rem;
+  font-family: "Poppins";
+}
+.inputTextPostReviewCheckBox input {
+  transform: translate(-140px, 0px);
+  min-width: 300px;
+  min-height: 30px;
+  font-size: 1.2rem;
+  font-family: "Poppins";
+}
 .validationError {
   margin-left: 1rem;
   color: red;
-  font-family: "Poppins",;
+  font-family: "Poppins";
 }
 .postReviewSubmitBtn {
   cursor: pointer;
